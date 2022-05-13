@@ -1,6 +1,0 @@
-<meta>
-    <include resource="ajax" />
-	<info author="" type="script" name="3dTextChallenge" showInResourceBrowser="true" version="2.1.3.7" />
-	<script src="3dtext_server.lua" type="server"/>
-	<script src="3dtext_client.lua" type="client"/>
-</meta>
