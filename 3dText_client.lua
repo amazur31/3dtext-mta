@@ -21,7 +21,7 @@ function()
 			local sx,sy = getScreenFromWorldPosition ( v.position[1], v.position[2], v.position[3]+0.95, 0.06 ) 
 			if not sx then return end 
 			local scale = 1/(0.3 * (distance / 150)) 
-			dxDrawText ( v.text, sx, sy - 30, sx, sy - 30, tocolor(255,255,255,255), math.min ( 0.4*(150/distance)*1.4,4), "bankgothic", "center", "bottom", false, false, false ) 
+			dxDrawText ( v.text, sx, sy - 30, sx, sy - 30, tocolor(255,255,255,255), math.min ( 0.4*(150/distance)*1.4,4), v.font, "center", "bottom", false, false, false ) 
 		end
 	end 
 end 
