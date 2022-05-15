@@ -25,7 +25,7 @@ function create3dText(x, y, z, content, color, distance, scale, font, los)
 	text.id = uuid()
 	TextsList[#TextsList+1] = text
 
-	return #TextsList
+	return text.id
 end
 
 --Edits 3D text specified parameters
@@ -63,7 +63,7 @@ function get3dTextByID(id)
 			return v
 		end
 	end
-	return false
+	return nil
 end
 
 --Removes 3D text
@@ -85,9 +85,9 @@ end
 --handles streaming objects to player
 --x, y, z - player coords
 
-function handle3dTextStreaming(x,y,z,stepRadius, maxRadius)
+function handle3dTextStreaming(radius)
 	local textsToBeSentToClient = {}
-	
+	local x, y, z = getElementPosition(client)
 	textsToBeSentToClient = TextsList
 	
 	triggerClientEvent( client, "onRequested3dTextDataReceived", root, textsToBeSentToClient)
@@ -161,4 +161,4 @@ function firstStartDebug ( ) --a way to test the solution before game
 	debugGet()
 end
 
-addEventHandler ( "onPlayerJoin", root, firstStartDebug )
+addEventHandler ( "onResourceStart", root, firstStartDebug )
